@@ -1,0 +1,66 @@
+#chat-box {
+  scroll-behavior: smooth;
+}
+
+.message {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.message.self {
+  margin-left: auto;
+}
+
+.message.other {
+  margin-right: auto;
+}
+
+.message img,
+.message a {
+  max-width: 100%;
+  margin-top: 0.5rem;
+}
+
+.delete-btn {
+  display: none;
+}
+
+.message.self:hover .delete-btn {
+  display: inline;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 640px) {
+  .message {
+    max-width: 90%;
+  }
+  .message img {
+    max-width: 80%;
+  }
+}
